@@ -289,11 +289,11 @@ const Portfolio = () => {
                                     initial={{ y: "0%" }}
                                     animate={{ y: "calc(-100% + 351px)" }}
                                     transition={{ 
-                                      duration: 8, 
+                                      duration: 10, 
                                       ease: "easeInOut",
                                       repeat: Infinity,
                                       repeatType: "reverse",
-                                      repeatDelay: 0.5
+                                      repeatDelay: 1
                                     }}
                                   >
                                     <Image 
@@ -301,7 +301,7 @@ const Portfolio = () => {
                                       alt={project.title}
                                       width={600}
                                       height={2000}
-                                      className="w-full h-auto"
+                                      className="w-full h-auto object-top"
                                     />
                                   </motion.div>
                                 ) : (
@@ -341,11 +341,11 @@ const Portfolio = () => {
                                     initial={{ y: "0%" }}
                                     animate={{ y: "calc(-100% + 556px)" }}
                                     transition={{ 
-                                      duration: 6, 
+                                      duration: 12, 
                                       ease: "easeInOut",
                                       repeat: Infinity,
                                       repeatType: "reverse",
-                                      repeatDelay: 0.5
+                                      repeatDelay: 1
                                     }}
                                   >
                                     <Image 
@@ -353,7 +353,7 @@ const Portfolio = () => {
                                       alt={project.title}
                                       width={280}
                                       height={2000}
-                                      className="w-full h-auto"
+                                      className="w-full h-auto object-top"
                                     />
                                   </motion.div>
                                 ) : project.screenshots ? (
