@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #1f1f1f;
+  --accent: #10b981;
+  --muted: #9ca3af;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+
+  /* Unified section padding — single source of truth */
+  --section-padding: 1.5rem;  /* 24px — mobile (320px+) */
+}
+
+@media (min-width: 640px) {
+  :root { --section-padding: 2rem; }    /* 32px — small tablet */
+}
+@media (min-width: 768px) {
+  :root { --section-padding: 3rem; }    /* 48px — tablet */
+}
+@media (min-width: 1024px) {
+  :root { --section-padding: 5rem; }    /* 80px — small desktop */
+}
+@media (min-width: 1280px) {
+  :root { --section-padding: 8rem; }   /* 128px — full desktop */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-outfit: var(--font-outfit);
+  --font-pacifico: var(--font-pacifico);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  :root {
+    scroll-padding-top: 64px;
+  }
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
