@@ -200,7 +200,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="relative min-h-screen flex flex-col items-center justify-center py-20 md:py-28 bg-[#0a0a0a]" style={{ paddingLeft: 'var(--section-padding)', paddingRight: 'var(--section-padding)' }}>
+    <section id="about" className="relative min-h-screen flex flex-col items-center justify-center py-20 md:py-28 bg-[#0a0a0a] overflow-hidden" style={{ paddingLeft: 'var(--section-padding)', paddingRight: 'var(--section-padding)' }}>
       {/* Elegant Curved Section Divider */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none -translate-y-[1px]">
         <svg 

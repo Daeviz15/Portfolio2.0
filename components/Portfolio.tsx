@@ -286,13 +286,14 @@ const Portfolio = () => {
                                 {project.screenshot ? (
                                   <motion.div 
                                     className="absolute top-0 left-0 w-full"
-                                    initial={{ y: 0 }}
-                                    whileHover={{ y: "calc(-100% + 351px)" }} // Frame height is ~351px
+                                    initial={{ y: "0%" }}
+                                    animate={{ y: "calc(-100% + 351px)" }}
                                     transition={{ 
                                       duration: 8, 
-                                      ease: "linear",
+                                      ease: "easeInOut",
                                       repeat: Infinity,
-                                      repeatType: "reverse"
+                                      repeatType: "reverse",
+                                      repeatDelay: 0.5
                                     }}
                                   >
                                     <Image 
@@ -337,13 +338,14 @@ const Portfolio = () => {
                                 {project.screenshot ? (
                                   <motion.div 
                                     className="absolute top-0 left-0 w-full"
-                                    initial={{ y: 0 }}
-                                    whileHover={{ y: "calc(-100% + 556px)" }} // Frame height is 556px
+                                    initial={{ y: "0%" }}
+                                    animate={{ y: "calc(-100% + 556px)" }}
                                     transition={{ 
                                       duration: 6, 
-                                      ease: "linear",
+                                      ease: "easeInOut",
                                       repeat: Infinity,
-                                      repeatType: "reverse"
+                                      repeatType: "reverse",
+                                      repeatDelay: 0.5
                                     }}
                                   >
                                     <Image 
@@ -361,7 +363,7 @@ const Portfolio = () => {
                                       className="flex h-full"
                                       animate={{ x: [0, -((project.screenshots.length - 1) * 256)] }}
                                       transition={{ 
-                                        duration: project.screenshots.length * 3, 
+                                        duration: project.screenshots.length * 1.5, 
                                         ease: "easeInOut",
                                         repeat: Infinity,
                                         repeatType: "reverse"

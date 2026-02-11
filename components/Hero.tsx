@@ -79,7 +79,7 @@ const Hero = () => {
       </div>
 
       {/* ── IMAGE COLUMN ── Middle on mobile, Left on desktop */}
-      <div className="order-2 lg:col-start-1 lg:row-span-2 relative flex items-end justify-center lg:justify-start mt-12 lg:mt-0">
+      <div className="order-2 lg:col-start-1 lg:row-span-2 relative flex items-end justify-center lg:justify-start mt-2 lg:mt-0">
         {/* Ambient glow behind image */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[400px] md:w-[500px] lg:w-[700px] h-[250px] sm:h-[400px] md:h-[500px] lg:h-[700px] bg-primary/5 rounded-full blur-[60px] md:blur-[120px] -z-10" />
 
@@ -150,7 +150,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center gap-4 md:gap-6"
+          className="flex items-center gap-4 mb-4 md:gap-6"
         >
           <div className="h-[1px] w-8 md:w-12 bg-white/20" />
           <div className="flex gap-4 md:gap-5 text-muted/50">
