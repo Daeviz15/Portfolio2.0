@@ -280,20 +280,20 @@ const Portfolio = () => {
                           <div className="relative mx-auto w-full max-w-[600px] group/monitor h-fit">
                             {/* Screen Frame with realistic depth */}
                             <div className="relative rounded-2xl overflow-hidden aspect-[16/10] bg-[#1a1a1a] border-[6px] md:border-[12px] border-[#181818] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
-                              <div className="absolute inset-0 bg-[#0a0a0a]/40 z-10 pointer-events-none group-hover/monitor:bg-transparent transition-all duration-500" />
+                              <div className="absolute inset-0 bg-[#0a0a0a]/5 z-10 pointer-events-none group-hover/monitor:bg-transparent transition-all duration-500" />
                               <div className="relative w-full h-full bg-[#111]">
                                 {/* Scrolling Image Logic */}
                                 {project.screenshot ? (
                                   <motion.div 
-                                    className="absolute top-0 left-0 w-full"
-                                    initial={{ y: "0%" }}
-                                    animate={{ y: "calc(-100% + 351px)" }}
+                                    className="absolute left-0 w-full"
+                                    initial={{ top: "0%", y: "0%" }}
+                                    animate={{ top: "100%", y: "-100%" }}
                                     transition={{ 
-                                      duration: 10, 
+                                      duration: 12, 
                                       ease: "easeInOut",
                                       repeat: Infinity,
                                       repeatType: "reverse",
-                                      repeatDelay: 1
+                                      repeatDelay: 2
                                     }}
                                   >
                                     <Image 
@@ -301,7 +301,7 @@ const Portfolio = () => {
                                       alt={project.title}
                                       width={600}
                                       height={2000}
-                                      className="w-full h-auto object-top"
+                                      className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
                                     />
                                   </motion.div>
                                 ) : (
@@ -333,19 +333,19 @@ const Portfolio = () => {
                               </div>
                               {/* Content */}
                               <div className="relative w-full h-full">
-                                <div className="absolute inset-0 bg-[#0a0a0a]/40 z-10 pointer-events-none group-hover/phone:bg-transparent transition-all duration-500" />
+                                <div className="absolute inset-0 bg-[#0a0a0a]/5 z-10 pointer-events-none group-hover/phone:bg-transparent transition-all duration-500" />
                                 
                                 {project.screenshot ? (
                                   <motion.div 
-                                    className="absolute top-0 left-0 w-full"
-                                    initial={{ y: "0%" }}
-                                    animate={{ y: "calc(-100% + 556px)" }}
+                                    className="absolute left-0 w-full"
+                                    initial={{ top: "0%", y: "0%" }}
+                                    animate={{ top: "100%", y: "-100%" }}
                                     transition={{ 
-                                      duration: 12, 
+                                      duration: 14, 
                                       ease: "easeInOut",
                                       repeat: Infinity,
                                       repeatType: "reverse",
-                                      repeatDelay: 1
+                                      repeatDelay: 2
                                     }}
                                   >
                                     <Image 
@@ -353,7 +353,7 @@ const Portfolio = () => {
                                       alt={project.title}
                                       width={280}
                                       height={2000}
-                                      className="w-full h-auto object-top"
+                                      className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
                                     />
                                   </motion.div>
                                 ) : project.screenshots ? (
