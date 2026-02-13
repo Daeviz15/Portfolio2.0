@@ -14,7 +14,7 @@ interface Project {
   description: string;
   tech: string[];
   image: string; // Brief preview image
-  screenshot?: string; // Long-page screenshot for vertical auto-scroll
+  screenshot?: string | string[]; // Single or multiple screenshots for vertical auto-scroll
   screenshots?: string[]; // Multiple screenshots for horizontal carousel
   link?: string;
   github?: string;
@@ -25,16 +25,27 @@ const projects: Project[] = [
   {
     id: 1,
     category: 'web',
+    title: 'ProVest Markets',
+    description: 'A premium full-stack cryptocurrency broker and trading platform. Features real-time market data, \"Quick Trade\" functionality, multi-wallet portfolio tracking, and an integrated NFT marketplace.',
+    tech: ['Next.js 15', 'Supabase', 'React 19', 'Tailwind CSS 4', 'Framer Motion', 'Recharts'],
+    image: '/provest-one.png',
+    screenshot: ['/provest-one.png', '/provest-two.png'],
+    link: 'https://www.provestmarkets.com/',
+    github: 'https://github.com/Daeviz15/ProVest-Markets-',
+  },
+  {
+    id: 2,
+    category: 'web',
     title: 'Acadex',
     description: 'An academic partner platform bridging expert mentorship with AI-driven tools. Features specialized assistance for complex coursework, AI tutors, and a centralized resource archive for higher education students.',
     tech: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     image: '/acadex-preview.png', // Placeholder
-    screenshot: '/acadex-full.png', // Placeholder for long screenshot
+    screenshot: '/acadex.png', // Placeholder for long screenshot
     link: 'https://acadex-one.vercel.app/',
     github: 'https://github.com/Daeviz15/Acadex',
   },
   {
-    id: 2,
+    id: 3,
     category: 'web',
     title: 'NewLabel-Hub',
     description: 'A unified digital media hub integrating high-quality VOD (Mux), podcasts, and an educational e-commerce marketplace. Features multi-branded dashboards for Jsity, THC, and GospelLine.',
@@ -45,7 +56,7 @@ const projects: Project[] = [
     github: 'https://github.com/Daeviz15/newlabel-hub',
   },
   {
-    id: 3,
+    id: 4,
     category: 'mobile',
     title: 'Mayor Exchange',
     description: 'A secure fintech platform for trading digital assets and liquidating gift cards. Features real-time market tracking, integrated wallet management, and robust KYC/2FA security measures.',
@@ -55,7 +66,7 @@ const projects: Project[] = [
     isTesting: true,
   },
   {
-    id: 4,
+    id: 5,
     category: 'mobile',
     title: 'SkillSwap',
     description: 'A peer-to-peer learning platform democratizing digital skill acquisition. Features AI-powered personalized roadmaps (Gemini AI), a reciprocal credit-based incentive system, and real-time community mentorship.',
@@ -296,13 +307,26 @@ const Portfolio = () => {
                                       repeatDelay: 2
                                     }}
                                   >
-                                    <Image 
-                                      src={project.screenshot} 
-                                      alt={project.title}
-                                      width={600}
-                                      height={2000}
-                                      className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
-                                    />
+                                    {Array.isArray(project.screenshot) ? (
+                                      project.screenshot.map((src, i) => (
+                                        <Image 
+                                          key={i}
+                                          src={src} 
+                                          alt={`${project.title} - screen ${i + 1}`}
+                                          width={600}
+                                          height={2000}
+                                          className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
+                                        />
+                                      ))
+                                    ) : (
+                                      <Image 
+                                        src={project.screenshot} 
+                                        alt={project.title}
+                                        width={600}
+                                        height={2000}
+                                        className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
+                                      />
+                                    )}
                                   </motion.div>
                                 ) : (
                                   <div className="absolute inset-0 flex items-center justify-center">
@@ -348,13 +372,26 @@ const Portfolio = () => {
                                       repeatDelay: 2
                                     }}
                                   >
-                                    <Image 
-                                      src={project.screenshot} 
-                                      alt={project.title}
-                                      width={280}
-                                      height={2000}
-                                      className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
-                                    />
+                                    {Array.isArray(project.screenshot) ? (
+                                      project.screenshot.map((src, i) => (
+                                        <Image 
+                                          key={i}
+                                          src={src} 
+                                          alt={`${project.title} - screen ${i + 1}`}
+                                          width={280}
+                                          height={2000}
+                                          className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
+                                        />
+                                      ))
+                                    ) : (
+                                      <Image 
+                                        src={project.screenshot} 
+                                        alt={project.title}
+                                        width={280}
+                                        height={2000}
+                                        className="w-full h-auto object-top brightness-[1.1] contrast-[1.05]"
+                                      />
+                                    )}
                                   </motion.div>
                                 ) : project.screenshots ? (
                                   /* Horizontal Carousel for multiple screenshots */
