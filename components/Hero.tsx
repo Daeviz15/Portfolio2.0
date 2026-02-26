@@ -129,7 +129,7 @@ const Hero = () => {
           className="w-fit"
         >
           <motion.a
-            href="/resume.pdf"
+            href="/myresume.pdf"
             download
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

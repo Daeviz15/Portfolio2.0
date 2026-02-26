@@ -151,7 +151,7 @@ const Contact = () => {
               Hire Me Now
             </motion.a>
             <motion.a
-              href="/resume.pdf"
+              href="/myresume.pdf"
               download
               className="group flex items-center justify-center sm:justify-end gap-3 text-muted/60 hover:text-primary transition-colors pr-2"
             >
